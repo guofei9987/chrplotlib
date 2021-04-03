@@ -28,5 +28,5 @@ setup(name='chrplotlib',
       license='MIT',
       packages=find_packages(),
       platforms=['linux', 'windows', 'macos'],
-      install_requires=['sys'],
+      install_requires=[],
       zip_safe=False)
