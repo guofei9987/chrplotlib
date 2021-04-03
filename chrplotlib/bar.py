@@ -60,7 +60,8 @@ def bar(data, label=None, kind='bar'):
 
 if __name__ == '__main__':
     data = 10 * np.random.rand(20)
+    label = range(20)
     print(bar(data))
     print(bar(data=data, label=range(20)))
-    print(bar(data, kind='bar'))
+    print(bar(data, kind='barh'))
     print(bar(data=data, label=range(20), kind='barh'))
