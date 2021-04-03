@@ -16,11 +16,11 @@ def read_requirements(filename):
             if not line.startswith('#')]
 
 
-setup(name='scikit-opt',
+setup(name='chrplotlib',
       python_requires='>=3.5',
       version=chrplotlib.__version__,
       description='Char plot in Python',
-      long_description=read_file('docs/en/README.md'),
+      long_description=read_file('README.md'),
       long_description_content_type="text/markdown",
       url='https://github.com/guofei9987/chrplotlib',
       author='Guo Fei',
