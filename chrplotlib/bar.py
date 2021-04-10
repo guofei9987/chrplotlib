@@ -1,13 +1,13 @@
-
-
 def tidy_label(data, label):
     label = label or [''] * len(data)
     label = label[:len(data)]
     return ['{:2}'.format(str(i)[:2]) for i in label]
 
 
-def bar_generate_canvas(y):
+def bar_generate_canvas(y, max_height=None, max_length=None):
     height, length = int(max(y)) + 1, y.shape[0]
+    height = max(height, max_height) if max_height else height
+    length = max(length, max_length) if max_length else length
     canvas = [[0] * height for _ in range(length)]
     for i, j in enumerate(y):
         j = j * 10
@@ -39,9 +39,9 @@ def bar_rotate(canvas):
     return list(zip(*canvas))
 
 
-def bar(data, label=None, kind='bar'):
+def bar(data, label=None, kind='bar', max_height=None, max_length=None):
     label = tidy_label(data, label)
-    canvas = bar_generate_canvas(data)
+    canvas = bar_generate_canvas(data, max_height=max_height, max_length=max_length)
     if kind == 'bar':
         mark = ' ▂▃▃▄▅▅▆▇▇█'
         canvas = bar_change_direction(canvas)
@@ -55,5 +55,3 @@ def bar(data, label=None, kind='bar'):
     else:
         raise Exception('kind should be "bar" or "barh"')
     return res
-
-
