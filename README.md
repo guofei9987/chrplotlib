@@ -9,7 +9,7 @@ $pip install chrplotlib
 For the current developer version:
 ```bash
 git clone git@github.com:guofei9987/chrplotlib.git
-cd scikit-opt
+cd chrplotlib
 pip install .
 ```
 
