@@ -43,7 +43,7 @@ def bar(data, label=None, kind='bar', max_height=None, max_length=None):
     label = tidy_label(data, label)
     canvas = bar_generate_canvas(data, max_height=max_height, max_length=max_length)
     if kind == 'bar':
-        mark = ' ▂▃▃▄▅▅▆▇▇█'
+        mark = ' ▁▂▃▄▅▅▆▇▇█'
         canvas = bar_change_direction(canvas)
         canvas = bar_add_segment(canvas)
         canvas = bar_rotate(canvas)
