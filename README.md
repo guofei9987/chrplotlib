@@ -3,7 +3,7 @@ Plot graphs using chars
 
 install:
 ```bash
-$pip install chrplotlib
+$pip install chrplotlib --upgrade
 ```
 
 For the current developer version:
@@ -132,3 +132,61 @@ Get this:
 18█▌█▌                
 19█▌█▌█▌█▌▌        
 ```
+
+### plot images by name
+
+```python
+from chrplotlib import img
+
+img_plotter = img.ImagePlotter()
+
+for name in img_plotter.get_all_names():
+    print(f"name:{name}")
+    print(img_plotter.from_name(name=name))
+```
+
+Will print this:
+
+![example_img1](img/example_img1.png)
+
+![example_img2](img/example_img2.png)   
+
+![example_img3](img/example_img3.png)
+
+### plot from image file
+
+```python
+from chrplotlib import img
+import cv2
+import os
+
+CURRENT_DIR = os.path.dirname(os.path.abspath(__file__))
+IMAGE_DIR = os.path.join(CURRENT_DIR, 'data')
+
+img_path = os.path.join(IMAGE_DIR, 'img1.jpeg')
+
+img_data = cv2.imread(img_path)
+
+# print it 
+print(img.plot_from_img(img_data, max_width=80))
+
+# or save it to .txt file
+with open("output.txt", "w") as f:
+    f.write(img.plot_from_img(img_data, max_width=150))
+```
+
+from this image:
+
+![img1.jpeg](examples/data/img1.jpeg)
+
+print this:
+
+![example_img4](img/example_img4.png)
+
+
+Plot more images:
+
+![example_img4](img/example_img5.png)
+![example_img4](img/example_img6.png)
+![example_img4](img/example_img7.png)
+
